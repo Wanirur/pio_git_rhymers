@@ -3,15 +3,15 @@ package edu.kis.vh.nursery.list;
 public class IntLinkedList {
 
 	private class Node {
-		public int value;
-		public Node prev, next;
+		private int value;
+		private Node prev, next;
 
 		public Node(int i) {
 			value = i;
 		}
 	}
 
-	private static final int INT = -1;
+	private static final int RETURN_VALUE_WHEN_EMPTY = -1;
 	Node last;
 	int i;
 
@@ -35,13 +35,13 @@ public class IntLinkedList {
 
 	public int top() {
 		if (isEmpty())
-			return INT;
+			return RETURN_VALUE_WHEN_EMPTY;
 		return last.value;
 	}
 
 	public int pop() {
 		if (isEmpty())
-			return INT;
+			return RETURN_VALUE_WHEN_EMPTY;
 		int ret = last.value;
 		last = last.prev;
 		return ret;
