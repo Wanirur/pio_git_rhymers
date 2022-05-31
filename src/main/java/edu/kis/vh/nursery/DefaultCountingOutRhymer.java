@@ -2,15 +2,21 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
-	private static final int COUNT_WHEN_FULL = 11;
-
 	private static final int DEFAULT_RETURN_VALUE = -1;
+
+	private static final int EMPTY_RHYMER_INDICATOR = -1;
 
 	private static final int MAX_NUMBERS_COUNT = 12;
 
+	private static final int COUNT_WHEN_FULL = MAX_NUMBERS_COUNT - 1;
+
 	private int[] numbers = new int[MAX_NUMBERS_COUNT];
 
-	private int total = DEFAULT_RETURN_VALUE;
+	private int total = EMPTY_RHYMER_INDICATOR;
+
+	public int getTotal() {
+		return total;
+	}
 
 	public void countIn(int in) {
 		if (!isFull())
@@ -18,7 +24,7 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public boolean callCheck() {
-		return total == DEFAULT_RETURN_VALUE;
+		return total == EMPTY_RHYMER_INDICATOR;
 	}
 
 	public boolean isFull() {
